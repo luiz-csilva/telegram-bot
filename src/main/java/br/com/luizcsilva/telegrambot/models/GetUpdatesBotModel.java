@@ -7,11 +7,11 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApiBotModel {
+public class GetUpdatesBotModel {
     private Boolean ok;
     List<ResultModel> result;
 
-    public ApiBotModel(){};
+    public GetUpdatesBotModel(){};
 
     public Boolean getOk() {
         return ok;

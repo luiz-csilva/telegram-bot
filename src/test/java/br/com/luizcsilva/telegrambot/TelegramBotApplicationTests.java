@@ -1,12 +1,13 @@
 package br.com.luizcsilva.telegrambot;
 
-import br.com.luizcsilva.telegrambot.models.ApiBotModel;
+import br.com.luizcsilva.telegrambot.models.GetUpdatesBotModel;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
+
 
 @SpringBootTest class TelegramBotApplicationTests {
 
@@ -21,8 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
                 .path("bot1172104673:AAETdYoHImubGaS44hVe8sIMbRqSIsyPcFo/getUpdates")
                 .build();
 
-        ResponseEntity<ApiBotModel> entity = template.getForEntity(uri.toUriString(), ApiBotModel.class);
-        System.out.println(entity.getBody().getResult().get(0).getMessage().getText());
+        ResponseEntity<GetUpdatesBotModel> entity = template.getForEntity(uri.toUriString(), GetUpdatesBotModel.class);
     }
 
 }
